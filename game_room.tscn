@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://j4gel3iu1em1"]
+
+[ext_resource type="Script" path="res://game_room.gd" id="1_c1uui"]
+[ext_resource type="Texture2D" uid="uid://b3cabcqiw17dk" path="res://mountains.png" id="1_knjmr"]
+[ext_resource type="PackedScene" uid="uid://c8a6tk8nnj2lt" path="res://Game_house.tscn" id="2_p6nxh"]
+[ext_resource type="PackedScene" uid="uid://lpm625rvnseb" path="res://money.tscn" id="3_6s7qx"]
+[ext_resource type="PackedScene" uid="uid://cbvv1h58kuads" path="res://wood_platfoem.tscn" id="4_mk5bq"]
+[ext_resource type="PackedScene" uid="uid://2kde5qfagop2" path="res://Dude_gravity.tscn" id="4_ohv1v"]
+[ext_resource type="PackedScene" uid="uid://dffd8mpd0i3bi" path="res://coin.tscn" id="7_qu80f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2stj"]
+size = Vector2(25.5, 15)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_c1uui")
+
+[node name="Mountains" type="Sprite2D" parent="."]
+position = Vector2(574, 321)
+scale = Vector2(19.1, 10.7333)
+texture = ExtResource("1_knjmr")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(25, 488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17, 13)
+shape = SubResource("RectangleShape2D_u2stj")
+
+[node name="Control" parent="Area2D" instance=ExtResource("3_6s7qx")]
+offset_left = -13.0
+offset_top = -479.0
+offset_right = -13.0
+offset_bottom = -479.0
+
+[node name="StaticBody2D12" parent="Area2D" instance=ExtResource("2_p6nxh")]
+position = Vector2(19, -23)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(15, 524)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(199, 448)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(17, 371)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(392, 372)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(601, 596)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(757, 523)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(916, 450)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(608, 260)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(196, 293)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(880, 297)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(735, 372)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_ohv1v")]
+position = Vector2(105, 482)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(79, 321)
+
+[node name="Area2D3" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(247, 409)
+
+[node name="Area2D4" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(259, 240)
+
+[node name="Area2D5" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(448, 311)
+
+[node name="Area2D6" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(634, 534)
+
+[node name="Area2D7" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(793, 469)
+
+[node name="Area2D8" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(572, 395)
+
+[node name="Area2D9" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(786, 311)
+
+[node name="Area2D10" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(659, 194)
+
+[node name="Area2D11" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(952, 401)
+
+[node name="Area2D12" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(1072, 290)
+
+[node name="Area2D13" parent="." instance=ExtResource("7_qu80f")]
+position = Vector2(926, 237)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("4_mk5bq")]
+position = Vector2(38, 524)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

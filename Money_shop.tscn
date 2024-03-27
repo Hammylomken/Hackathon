@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45ifjwelxp7u"]
+
+[ext_resource type="Texture2D" uid="uid://bejaasl2e74m6" path="res://money.png" id="1_376ja"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Money" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 1.90735e-06)
+scale = Vector2(1.69, 2.05)
+texture = ExtResource("1_376ja")
